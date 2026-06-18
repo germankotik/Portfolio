@@ -507,7 +507,7 @@ img { display: block; max-width: 100%; }
   .header__logo  { font-size: 20px; }
   .header__nav   { font-size: 20px; gap: 24px; flex-shrink: 0; }
 
-  .content { min-width: 0; gap: 48px; }
+  .content { min-width: 0; gap: 48px; align-items: stretch; }
 
   /* Hero */
   .hero            { padding: 48px 0 0; gap: 24px; }
@@ -552,9 +552,12 @@ img { display: block; max-width: 100%; }
     flex-direction: column-reverse;
     gap: 48px;
     padding-bottom: 80px;
+    width: 100%;
+    align-self: stretch;
+    align-items: flex-start;
   }
-  .fact { gap: 72px; max-width: 380px; }
-  .ascii { font-size: 14px; line-height: 1.2; }
+  .fact { gap: 72px; }
+  .ascii { font-size: 14px; line-height: 1.2; padding: 0; }
   .fact__body  { padding: 0; gap: 32px; }
   .fact__title { font-size: 20px; }
   .fact__text  { font-size: 20px; min-height: calc(3 * 1.5em); }
@@ -565,8 +568,14 @@ img { display: block; max-width: 100%; }
   .content--case .cta__card {
     align-items: flex-start;
     text-align: left;
+    width: 100%;
+  }
+  .content--case .cta__title {
+    align-items: flex-start;
+    width: 100%;
   }
   .content--case .cta__button {
+    align-items: flex-start;
     flex-direction: row;
     flex-wrap: nowrap;
     white-space: nowrap;

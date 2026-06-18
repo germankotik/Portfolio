@@ -125,15 +125,21 @@ img { display: block; max-width: 100%; }
   max-width: 1388px;
 }
 
-.header,
-.footer {
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   padding: 24px 0;
 }
-.footer { height: 132px; }
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 24px 0;
+  height: 132px;
+}
 
 .header__logo {
   font-family: 'Azeret Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -150,7 +156,6 @@ img { display: block; max-width: 100%; }
   font-size: 24px;
 }
 
-.footer__left { color: var(--fg-muted); font-size: 24px; }
 .footer__icons { display: flex; gap: 24px; align-items: center; }
 .footer__icons a { color: #858586; display: inline-flex; transition: color 180ms ease; }
 .footer__icons a:hover { color: #fff; }
@@ -586,7 +591,6 @@ img { display: block; max-width: 100%; }
   .prose ul         { font-size: 16px; }
 
   /* Footer */
-  .footer__left   { font-size: 20px; }
   .footer__icons  { gap: 24px; }
 
   .peek-popup img { width: 220px; }

@@ -24,6 +24,36 @@ body {
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
 }
+body.is-loading { overflow: hidden; }
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 280ms ease, visibility 280ms ease;
+}
+.loader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.loader__spinner {
+  width: 28px;
+  height: 28px;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-top-color: rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  animation: loaderSpin 0.75s linear infinite;
+}
+@keyframes loaderSpin {
+  to { transform: rotate(360deg); }
+}
 
 a {
   color: inherit;

@@ -10,7 +10,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Azeret+Mono:wght@500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="is-loading">
+  <div class="loader" aria-live="polite" aria-busy="true">
+    <div class="loader__spinner" aria-hidden="true"></div>
+  </div>
   <div class="page">
     <header class="header shell">
       <a class="header__home" href="index.html" aria-label="Home"><div class="header__logo"> /\_/\
@@ -84,5 +87,18 @@
       </div>
     </footer>
   </div>
+  <script>
+    (function () {
+      function hideLoader() {
+        document.body.classList.remove('is-loading');
+        const loader = document.querySelector('.loader');
+        if (!loader) return;
+        loader.classList.add('is-hidden');
+        loader.setAttribute('aria-busy', 'false');
+      }
+      if (document.readyState === 'complete') hideLoader();
+      else window.addEventListener('load', hideLoader, { once: true });
+    })();
+  </script>
 </body>
 </html>
